@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2TON Luxe - Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">2TON Luxe</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jewelries.html">Jewelries</a></li>
+                <li><a href="wears.html">Wears</a></li>
+                <li><a href="modest-wears.html">Modest Wears</a></li>
+                <li><a href="home-kitchen.html">Home & Kitchen</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="product-details">
+        <div id="product-info"></div>
+        <form id="add-to-cart-form">
+            <label for="quantity">Quantity:</label>
+            <select id="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <!-- Up to 10 -->
+                <option value="10">10</option>
+            </select>
+            <label for="color">Color:</label>
+            <select id="color"></select>
+            <button type="submit" class="btn">Add to Cart</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 2TON Luxe. All rights reserved.</p>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemId = urlParams.get('item');
+        const product = getProductById(itemId);
+
+        if (product) {
+            document.getElementById('product-info').innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h2>${product.name}</h2>
+                <p>${product.description}</p>
+                <span class="price">$${product.price}</span>
+            `;
+            const colorSelect = document.getElementById('color');
+            product.colors.forEach(color => {
+                const option = document.createElement('option');
+                option.value = color;
+                option.textContent = color;
+                colorSelect.appendChild(option);
+            });
+        } else {
+            document.getElementById('product-info').innerHTML = '<p>Product not found.</p>';
+        }
+
+        document.getElementById('add-to-cart-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const quantity = document.getElementById('quantity').value;
+            const color = document.getElementById('color').value;
+            addToCart(itemId, quantity, color);
+        });
+    </script>
+</body>
+</html>
