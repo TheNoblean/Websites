@@ -3,43 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2TON Luxe - Premium Jewelries, Bags, Shoes & More</title>
+    <title>2TON Luxe - Premium Jewelries, Wears, Modest Wears & More</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">2TON Luxe</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jewelries.html">Jewelries</a></li>
-                <li><a href="Bags.html">Bags</a></li>
-                <li><a href="Shoes.html">Shoes</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <button id="menu-toggle">☰</button>
+    <div class="sidebar">
+        <ul>
+            <li><a href="login.html">Log in/Register</a></li>
+            <li><a href="jewelries.html">Shop Now</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <header>
+            <nav>
+                <div class="logo">2TON Luxe</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jewelries.html">Jewelries</a></li>
+                    <li><a href="wears.html">Wears</a></li>
+                    <li><a href="modest-wears.html">Modest Wears</a></li>
+                    <li><a href="home-kitchen.html">Home & Kitchen</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to 2TON Luxe</h1>
-            <p>Elevate your style with our premium collection of jewelries, wears, modest wears, and essential kitchen utensils. Browse our items below and discover luxury at affordable prices.</p>
-            <a href="jewelries.html" class="btn">Shop Now</a> <!-- Or link to a main shop overview if preferred -->
-        </div>
-    </section>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to 2TON Luxe</h1>
+                <p>Discover elegance with our premium collection of jewelries, stylish wears, modest fashion, and exquisite kitchen utensils.</p>
+                <a href="jewelries.html" class="btn">Shop Now</a>
+            </div>
+        </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>Email: 2ton-luxe@gmail.com | Phone: +234-906-093-9848</p>
-        <p>Follow us on social media @2ton-luxe for updates!</p>
-    </section>
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-item">
+                    <img src="images/necklace.jpg" alt="Gold Necklace">
+                    <h3>Gold Necklace</h3>
+                    <p>Elegant 18k gold chain.</p>
+                    <span class="price">$50</span>
+                    <a href="product.html?item=gold-necklace" class="btn small-btn">View Details</a>
+                </div>
+                <div class="product-item">
+                    <img src="images/jeans.jpg" alt="Slim Fit Jeans">
+                    <h3>Slim Fit Jeans</h3>
+                    <p>Comfortable denim wear.</p>
+                    <span class="price">$40</span>
+                    <a href="product.html?item=slim-fit-jeans" class="btn small-btn">View Details</a>
+                </div>
+                <div class="product-item">
+                    <img src="images/dress.jpg" alt="Long Dress">
+                    <h3>Long Dress</h3>
+                    <p>Elegant modest dress.</p>
+                    <span class="price">$60</span>
+                    <a href="product.html?item=long-dress" class="btn small-btn">View Details</a>
+                </div>
+                <div class="product-item">
+                    <img src="images/spoons.jpg" alt="Stainless Steel Spoons">
+                    <h3>Stainless Steel Spoons</h3>
+                    <p>Durable kitchen set.</p>
+                    <span class="price">$15</span>
+                    <a href="product.html?item=stainless-spoons" class="btn small-btn">View Details</a>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 2TON Luxe. All rights reserved.</p>
-    </footer>
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@2tonluxe.com | Phone: +1-123-456-7890</p>
+            <p>Follow us on social media for updates!</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 2TON Luxe. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
 </body>
 </html>
